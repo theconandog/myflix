@@ -1,0 +1,564 @@
+{
+  "categorias": {
+    "Populares na MinhaFlix": [
+      {
+        "id": "duna2",
+        "titulo": "Duna: Parte Dois",
+        "ano": 2024,
+        "genero": "Ficção Científica",
+        "rating": 4.9,
+        "descricao": "Paul Atreides une-se a Chani e aos Fremen enquanto busca vingança contra os conspiradores que destruíram sua família.",
+        "capa": "https://m.media-amazon.com/images/M/MV5BMTg2MzY0ODItMzg1Mi00Y2IzLWE1MTctYWJhOGQ2YjM1ZjE0XkEyXkFqcGdeQXVyMDM2NDM2MQ@@._V1_.jpg",
+        "backdrop": "https://wallpapercave.com/wp/wp12810574.jpg",
+        "trailer": "https://www.youtube.com/embed/Way9Dexny3w"
+      },
+      {
+        "id": "oppenheimer",
+        "titulo": "Oppenheimer",
+        "ano": 2023,
+        "genero": "Drama Histórico",
+        "rating": 4.7,
+        "descricao": "A história do físico J. Robert Oppenheimer e seu papel no desenvolvimento da bomba atômica durante a Segunda Guerra Mundial.",
+        "capa": "https://m.media-amazon.com/images/M/MV5BMDBmYTZjNjUtN2M1MS00MTQ2LTk2ODgtNzc2M2QyZGE5NTVjXkEyXkFqcGdeQXVyNzAwMjU2MTY@._V1_.jpg",
+        "backdrop": "https://wallpapercave.com/wp/wp11743462.jpg",
+        "trailer": "https://www.youtube.com/embed/uYPbbksJxIg"
+      },
+      {
+        "id": "interestelar",
+        "titulo": "Interestelar",
+        "ano": 2014,
+        "genero": "Ficção Científica",
+        "rating": 4.8,
+        "descricao": "Um grupo de astronautas viaja através de um buraco de minhoca em busca de um novo lar para a humanidade.",
+        "capa": "https://m.media-amazon.com/images/M/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg",
+        "backdrop": "https://wallpapercave.com/wp/wp5061079.jpg",
+        "trailer": "https://www.youtube.com/embed/zSWdZVtXT7E"
+      },
+      {
+        "id": "thebatman",
+        "titulo": "The Batman",
+        "ano": 2022,
+        "genero": "Ação",
+        "rating": 4.4,
+        "descricao": "Bruce Wayne investiga a corrupção em Gotham City enquanto enfrenta o Charada, um assassino em série.",
+        "capa": "https://m.media-amazon.com/images/M/MV5BMDdmMTBiNTYtMDIzNi00NGVlLWIzMDYtZTk3MTQ3NGQxZGEwXkEyXkFqcGdeQXVyMzMwOTU5MDk@._V1_.jpg",
+        "backdrop": "https://wallpapercave.com/wp/wp10784436.jpg",
+        "trailer": "https://www.youtube.com/embed/mqqft2x_Aa4"
+      },
+      {
+        "id": "avatar2",
+        "titulo": "Avatar: O Caminho da Água",
+        "ano": 2022,
+        "genero": "Ficção Científica",
+        "rating": 4.3,
+        "descricao": "Jake Sully e sua família embarcam em uma nova aventura no mundo aquático de Pandora.",
+        "capa": "https://m.media-amazon.com/images/M/MV5BYjhiNjBlODctY2ZiOC00YjVlLWFlNzAtNTVhNzM1YjI1NzMxXkEyXkFqcGdeQXVyMjQxNTE1MDA@._V1_.jpg",
+        "backdrop": "https://wallpapercave.com/wp/wp11280610.jpg",
+        "trailer": "https://www.youtube.com/embed/d9MyW72ELq0"
+      },
+      {
+        "id": "topgun",
+        "titulo": "Top Gun: Maverick",
+        "ano": 2022,
+        "genero": "Ação",
+        "rating": 4.6,
+        "descricao": "Pete 'Maverick' Mitchell retorna para treinar uma nova geração de pilotos de caça.",
+        "capa": "https://m.media-amazon.com/images/M/MV5BZWYzOGEwNTgtNWU3NS00ZTQ0LWJkODUtMmVhMjIwMjA1ZmQwXkEyXkFqcGdeQXVyMjkwOTAyMDU@._V1_.jpg",
+        "backdrop": "https://wallpapercave.com/wp/wp10627656.jpg",
+        "trailer": "https://www.youtube.com/embed/qSqVVswa420"
+      },
+      {
+        "id": "johnwick4",
+        "titulo": "John Wick 4",
+        "ano": 2023,
+        "genero": "Ação",
+        "rating": 4.5,
+        "descricao": "John Wick descobre um caminho para derrotar a Alta Cúpula, mas precisa enfrentar um novo inimigo.",
+        "capa": "https://m.media-amazon.com/images/M/MV5BMDExZGMyOTMtMDgyYi00NGIwLWJhMTEtOTdkZGFjNmZiMTEwXkEyXkFqcGdeQXVyMjM4NTM5NDY@._V1_.jpg",
+        "backdrop": "https://wallpapercave.com/wp/wp11991614.jpg",
+        "trailer": "https://www.youtube.com/embed/qEVUtrk8_B4"
+      },
+      {
+        "id": "missaoimpossivel",
+        "titulo": "Missão Impossível 7",
+        "ano": 2023,
+        "genero": "Ação",
+        "rating": 4.2,
+        "descricao": "Ethan Hunt e sua equipe embarcam em sua missão mais perigosa até hoje.",
+        "capa": "https://m.media-amazon.com/images/M/MV5BYzFiZjc1YzctMDY3Zi00NGE5LTlmNWEtN2Q3OWFjYjY1NGM2XkEyXkFqcGdeQXVyMTUyMTUzNjQ0._V1_.jpg",
+        "backdrop": "https://wallpapercave.com/wp/wp12170307.jpg",
+        "trailer": "https://www.youtube.com/embed/avz06PDqDbM"
+      },
+      {
+        "id": "velozesefuriosos10",
+        "titulo": "Velozes & Furiosos 10",
+        "ano": 2023,
+        "genero": "Ação",
+        "rating": 4.0,
+        "descricao": "Dom Toretto e sua família enfrentam seu inimigo mais letal até agora.",
+        "capa": "https://m.media-amazon.com/images/M/MV5BNzZmOTU1ZTEtYzVhNi00NzQxLWI5ZjAtNWNhNjEwY2E3YmZjXkEyXkFqcGdeQXVyODk4OTc3MTY@._V1_.jpg",
+        "backdrop": "https://wallpapercave.com/wp/wp11745654.jpg",
+        "trailer": "https://www.youtube.com/embed/a1w9x5U88jU"
+      },
+      {
+        "id": "guardioesgalaxia3",
+        "titulo": "Guardiões da Galáxia Vol. 3",
+        "ano": 2023,
+        "genero": "Ficção Científica",
+        "rating": 4.5,
+        "descricao": "Os Guardiões embarcam em uma missão perigosa para proteger um dos seus.",
+        "capa": "https://m.media-amazon.com/images/M/MV5BMDgxOTdjMzYtZGQxMS00ZTAzLWI4Y2UtMTQzN2VlYjYyZWRiXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg",
+        "backdrop": "https://wallpapercave.com/wp/wp11920000.jpg",
+        "trailer": "https://www.youtube.com/embed/u3V5KDHRQvk"
+      }
+    ],
+    "Séries Premiadas": [
+      {
+        "id": "strangerthings",
+        "titulo": "Stranger Things",
+        "ano": 2016,
+        "genero": "Suspense",
+        "rating": 4.8,
+        "descricao": "Quando um garoto desaparece, a cidade toda participa nas buscas. Mas o que encontram são segredos, forças sobrenaturais e uma menina perdida.",
+        "capa": "https://m.media-amazon.com/images/M/MV5BMDZkYmVhNjMtNWU4MC00MDQxLWE3MjYtZGMzZWI1ZjhlOWJmXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg",
+        "backdrop": "https://wallpapercave.com/wp/wp1917154.jpg",
+        "trailer": "https://www.youtube.com/embed/b9EkMc79ZSU"
+      },
+      {
+        "id": "breakingbad",
+        "titulo": "Breaking Bad",
+        "ano": 2008,
+        "genero": "Drama",
+        "rating": 4.9,
+        "descricao": "Um professor de química com câncer se transforma em um poderoso chefão das drogas para garantir o futuro de sua família.",
+        "capa": "https://m.media-amazon.com/images/M/MV5BYmQ4YWMxYjUtNjZmYi00MDQ1LWFjMjMtNjA5ZDdiYjdiODU5XkEyXkFqcGdeQXVyMTMzNDExODE5._V1_.jpg",
+        "backdrop": "https://wallpapercave.com/wp/wp1837561.jpg",
+        "trailer": "https://www.youtube.com/embed/HhesaQXLuRY"
+      },
+      {
+        "id": "thelastofus",
+        "titulo": "The Last of Us",
+        "ano": 2023,
+        "genero": "Drama",
+        "rating": 4.7,
+        "descricao": "Joel e Ellie embarcam em uma jornada através de um Estados Unidos pós-apocalíptico devastado por uma infecção fúngica.",
+        "capa": "https://m.media-amazon.com/images/M/MV5BZGUzYTI3M2EtZmM0Yy00NGUyLWI4ODEtN2Q3ZGJlYzhhZjU3XkEyXkFqcGdeQXVyNTM0OTY1OQ@@._V1_.jpg",
+        "backdrop": "https://wallpapercave.com/wp/wp11722333.jpg",
+        "trailer": "https://www.youtube.com/embed/uLtkt8BonwM"
+      },
+      {
+        "id": "gameofthrones",
+        "titulo": "Game of Thrones",
+        "ano": 2011,
+        "genero": "Fantasia",
+        "rating": 4.6,
+        "descricao": "Nove famílias nobres lutam pelo controle das terras míticas de Westeros, enquanto um antigo inimigo retorna após milênios.",
+        "capa": "https://m.media-amazon.com/images/M/MV5BYTRiNDQwYzAtMzVlZS00NTI5LWJjYjUtMzkwNTUzMWMxZTllXkEyXkFqcGdeQXVyNDIzMzcwNjc@._V1_.jpg",
+        "backdrop": "https://wallpapercave.com/wp/wp2277845.jpg",
+        "trailer": "https://www.youtube.com/embed/KPLWWIOCOOQ"
+      },
+      {
+        "id": "themandalorian",
+        "titulo": "The Mandalorian",
+        "ano": 2019,
+        "genero": "Ficção Científica",
+        "rating": 4.5,
+        "descricao": "Um guerreiro solitário trabalha como caçador de recompensas nos confins da galáxia, longe da autoridade da Nova República.",
+        "capa": "https://m.media-amazon.com/images/M/MV5BZDhlMzY0ZGItZTcyNS00ZTAxLWIyMmYtZGQ2ODg5OWZiYmJkXkEyXkFqcGdeQXVyODkzNTgxMDg@._V1_.jpg",
+        "backdrop": "https://wallpapercave.com/wp/wp7418473.jpg",
+        "trailer": "https://www.youtube.com/embed/eW7Twd85m2g"
+      },
+      {
+        "id": "peakyblinders",
+        "titulo": "Peaky Blinders",
+        "ano": 2013,
+        "genero": "Drama",
+        "rating": 4.7,
+        "descricao": "Uma gangue de Birmingham cresce sob o comando do cruel Tommy Shelby, após a Primeira Guerra Mundial.",
+        "capa": "https://m.media-amazon.com/images/M/MV5BMTkzNjEzMDEzMF5BMl5BanBnXkFtZTgwMDI0MjE4MjE@._V1_.jpg",
+        "backdrop": "https://wallpapercave.com/wp/wp2150888.jpg",
+        "trailer": "https://www.youtube.com/embed/oVzVdvGIC7U"
+      },
+      {
+        "id": "theboys",
+        "titulo": "The Boys",
+        "ano": 2019,
+        "genero": "Ação",
+        "rating": 4.5,
+        "descricao": "Um grupo de vigilantes embarca em uma jornada para expor a verdade sobre os super-heróis corruptos.",
+        "capa": "https://m.media-amazon.com/images/M/MV5BOTEyNDJhMDAtY2U5ZS00OTMzLTkwODktMjU3MjFkZWVlMGYyXkEyXkFqcGdeQXVyMjkwOTAyMDU@._V1_.jpg",
+        "backdrop": "https://wallpapercave.com/wp/wp8664214.jpg",
+        "trailer": "https://www.youtube.com/embed/M1bhOaLV4FU"
+      },
+      {
+        "id": "thewitcher",
+        "titulo": "The Witcher",
+        "ano": 2019,
+        "genero": "Fantasia",
+        "rating": 4.3,
+        "descricao": "Geralt de Rívia, um caçador de monstros mutante, luta para encontrar seu lugar num mundo onde as pessoas muitas vezes são mais perversas que as bestas.",
+        "capa": "https://m.media-amazon.com/images/M/MV5BN2EyZjM3NzUtNWUzMi00MTgxLWI0NTctMzY4M2VlOTdjZWRiXkEyXkFqcGdeQXVyNDIzMzcwNjc@._V1_.jpg",
+        "backdrop": "https://wallpapercave.com/wp/wp9415515.jpg",
+        "trailer": "https://www.youtube.com/embed/ndl1W4ltcmg"
+      },
+      {
+        "id": "lacasadepapel",
+        "titulo": "La Casa de Papel",
+        "ano": 2017,
+        "genero": "Suspense",
+        "rating": 4.6,
+        "descricao": "Um grupo de assaltantes se propõe a cometer o roubo do século na Casa da Moeda da Espanha.",
+        "capa": "https://m.media-amazon.com/images/M/MV5BODI0ZTljYTMtODQ1NC00NmI0LTk1YWUtN2FlNDM1MDExMDlhXkEyXkFqcGdeQXVyMTM0NTUzNDIy._V1_.jpg",
+        "backdrop": "https://wallpapercave.com/wp/wp4056411.jpg",
+        "trailer": "https://www.youtube.com/embed/htqXL94Rza4"
+      },
+      {
+        "id": "squidgame",
+        "titulo": "Squid Game",
+        "ano": 2021,
+        "genero": "Suspense",
+        "rating": 4.4,
+        "descricao": "Centenas de competidores endividados aceitam um convite para competir em jogos infantis por um prêmio tentador, mas as apostas são mortais.",
+        "capa": "https://m.media-amazon.com/images/M/MV5BYWE3MDVkN2EtNjQ5MS00ZDQ4LTliNzYtMjc2YWMzMDEwMTA3XkEyXkFqcGdeQXVyMTEzMTI1Mjk3._V1_.jpg",
+        "backdrop": "https://wallpapercave.com/wp/wp9415473.jpg",
+        "trailer": "https://www.youtube.com/embed/oqxAJKy0ii4"
+      }
+    ],
+    "Clássicos do Cinema": [
+      {
+        "id": "opoderosochefao",
+        "titulo": "O Poderoso Chefão",
+        "ano": 1972,
+        "genero": "Drama",
+        "rating": 4.9,
+        "descricao": "A saga da família Corleone, liderada por Don Vito Corleone, que luta para manter seu império do crime.",
+        "capa": "https://m.media-amazon.com/images/M/MV5BM2MyNjYxNmUtYTAwNi00MTYxLWJmNWYtYzZlODY3ZTk3OTFlXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_.jpg",
+        "backdrop": "https://wallpapercave.com/wp/wp1924874.jpg",
+        "trailer": "https://www.youtube.com/embed/sY1S34973zA"
+      },
+      {
+        "id": "tubarao",
+        "titulo": "Tubarão",
+        "ano": 1975,
+        "genero": "Suspense",
+        "rating": 4.7,
+        "descricao": "Um terrível tubarão branco aterroriza uma pequena cidade balneária, levando um policial, um cientista e um caçador a se unirem para matá-lo.",
+        "capa": "https://m.media-amazon.com/images/M/MV5BMmVmODY1MzEtYTMwZC00MzNhLWFkNDMtZjAwM2EwODUxZTA5XkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_.jpg",
+        "backdrop": "https://wallpapercave.com/wp/wp1946339.jpg",
+        "trailer": "https://www.youtube.com/embed/U1fu_sA7XhE"
+      },
+      {
+        "id": "indianajones",
+        "titulo": "Indiana Jones e Os Caçadores da Arca Perdida",
+        "ano": 1981,
+        "genero": "Aventura",
+        "rating": 4.8,
+        "descricao": "O arqueólogo Indiana Jones parte em uma perigosa jornada para encontrar a Arca da Aliança antes dos nazistas.",
+        "capa": "https://m.media-amazon.com/images/M/MV5BNTU2ODkyY2MtMjU1NC00NjE1LWEzYjgtMWQ3MzRhMTE0NDc0XkEyXkFqcGdeQXVyMjM4MzQ4OTQ@._V1_.jpg",
+        "backdrop": "https://wallpapercave.com/wp/wp1946343.jpg",
+        "trailer": "https://www.youtube.com/embed/XkkzKHCx154"
+      },
+      {
+        "id": "starwars4",
+        "titulo": "Star Wars: Episódio IV",
+        "ano": 1977,
+        "genero": "Ficção Científica",
+        "rating": 4.9,
+        "descricao": "Luke Skywalker se junta a um cavaleiro Jedi, um piloto arrogante e dois androides para salvar a princesa Leia e derrotar o Império Galáctico.",
+        "capa": "https://m.media-amazon.com/images/M/MV5BNzVlY2MwMjktM2E4OS00Y2Y3LWE3ZjctYzhkZGM3YzA1ZWM2XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_.jpg",
+        "backdrop": "https://wallpapercave.com/wp/wp1946349.jpg",
+        "trailer": "https://www.youtube.com/embed/vZ734NWnAHA"
+      },
+      {
+        "id": "et",
+        "titulo": "E.T. - O Extraterrestre",
+        "ano": 1982,
+        "genero": "Ficção Científica",
+        "rating": 4.7,
+        "descricao": "Um garoto faz amizade com um alienígena perdido na Terra e o ajuda a voltar para casa.",
+        "capa": "https://m.media-amazon.com/images/M/MV5BMTQ2ODFlMDAtNzdhOC00ZDYzLWE3YTMtNDU4ZGFmZmJmYTczXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_.jpg",
+        "backdrop": "https://wallpapercave.com/wp/wp1946351.jpg",
+        "trailer": "https://www.youtube.com/embed/qYAETtIIClk"
+      },
+      {
+        "id": "devoltaaofuturo",
+        "titulo": "De Volta Para o Futuro",
+        "ano": 1985,
+        "genero": "Ficção Científica",
+        "rating": 4.8,
+        "descricao": "Marty McFly viaja acidentalmente 30 anos no passado e deve garantir que seus pais se apaixonem para garantir seu próprio futuro.",
+        "capa": "https://m.media-amazon.com/images/M/MV5BZmU0M2Y1OGUtZjIxNi00ZjBkLTg1MjgtOWIyNThiZWIwYjRiXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_.jpg",
+        "backdrop": "https://wallpapercave.com/wp/wp1946355.jpg",
+        "trailer": "https://www.youtube.com/embed/qvsgGtivCgs"
+      },
+      {
+        "id": "psicose",
+        "titulo": "Psicose",
+        "ano": 1960,
+        "genero": "Terror",
+        "rating": 4.6,
+        "descricao": "Uma secretária foge com dinheiro roubado e se hospeda em um hotel administrado por um homem perturbado e sua mãe dominadora.",
+        "capa": "https://m.media-amazon.com/images/M/MV5BNTQwNDM1YzItNDAxZC00NWY2LTk0M2UtNDIwNWI5OGUyNWUxXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_.jpg",
+        "backdrop": "https://wallpapercave.com/wp/wp1946359.jpg",
+        "trailer": "https://www.youtube.com/embed/NG3-GlvKPcg"
+      },
+      {
+        "id": "cidadededeus",
+        "titulo": "Cidade de Deus",
+        "ano": 2002,
+        "genero": "Drama",
+        "rating": 4.8,
+        "descricao": "Dois meninos seguem caminhos diferentes na violenta favela Cidade de Deus no Rio de Janeiro.",
+        "capa": "https://m.media-amazon.com/images/M/MV5BMGU5OWEwZDItNmNkMC00NzZmLTk1YTctNzVhZTJjM2NlZTVmXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg",
+        "backdrop": "https://wallpapercave.com/wp/wp1946363.jpg",
+        "trailer": "https://www.youtube.com/embed/ioUE_5wpg_E"
+      },
+      {
+        "id": "opianista",
+        "titulo": "O Pianista",
+        "ano": 2002,
+        "genero": "Drama",
+        "rating": 4.7,
+        "descricao": "Um pianista judeu polonês luta para sobreviver à destruição de Varsóvia durante a Segunda Guerra Mundial.",
+        "capa": "https://m.media-amazon.com/images/M/MV5BOWRiZDIxZjktMTA1NC00MDQ2LWEzMjUtMTliZmY3NjQ3ODJiXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_.jpg",
+        "backdrop": "https://wallpapercave.com/wp/wp1946367.jpg",
+        "trailer": "https://www.youtube.com/embed/BFwGqLa_oAo"
+      },
+      {
+        "id": "scarface",
+        "titulo": "Scarface",
+        "ano": 1983,
+        "genero": "Crime",
+        "rating": 4.5,
+        "descricao": "Um refugiado cubano ambicioso sobe na hierarquia do crime em Miami, mas sua paranoia e vício em drogas ameaçam destruí-lo.",
+        "capa": "https://m.media-amazon.com/images/M/MV5BNjdjNGQ4NDEtNTEwYS00MTgxLTliYzQtYzE2ZDRiZjFhZmNlXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_.jpg",
+        "backdrop": "https://wallpapercave.com/wp/wp1946371.jpg",
+        "trailer": "https://www.youtube.com/embed/7pQQHnqBa2E"
+      }
+    ],
+    "Documentários Impactantes": [
+      {
+        "id": "seaspiracy",
+        "titulo": "Seaspiracy",
+        "ano": 2021,
+        "genero": "Documentário",
+        "rating": 4.3,
+        "descricao": "Um documentário revelador que expõe a indústria pesqueira global e seu impacto nos ecossistemas marinhos.",
+        "capa": "https://m.media-amazon.com/images/M/MV5BZTUzYTY1YTItNGQ3Yi00ODk1LWE0YjMtYjQ1NTMxZTYyNzFkXkEyXkFqcGdeQXVyMTEzMTI1Mjk3._V1_.jpg",
+        "backdrop": "https://wallpapercave.com/wp/wp9404539.jpg",
+        "trailer": "https://www.youtube.com/embed/1Q5CXN7soQg"
+      },
+      {
+        "id": "thesocialdilemma",
+        "titulo": "The Social Dilemma",
+        "ano": 2020,
+        "genero": "Documentário",
+        "rating": 4.2,
+        "descricao": "Ex-funcionários de grandes empresas de tecnologia alertam sobre os perigos das redes sociais e seu impacto na sociedade.",
+        "capa": "https://m.media-amazon.com/images/M/MV5BOTYwM2YxZDgtYzBhNi00MzVhLTg0YzAtNGRjZThlYTY5ZWE2XkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg",
+        "backdrop": "https://wallpapercave.com/wp/wp9404543.jpg",
+        "trailer": "https://www.youtube.com/embed/uaaC57tcci0"
+      },
+      {
+        "id": "freesolo",
+        "titulo": "Free Solo",
+        "ano": 2018,
+        "genero": "Documentário",
+        "rating": 4.7,
+        "descricao": "O alpinista Alex Honnold tenta escalar o El Capitan no Yosemite sem cordas ou equipamentos de segurança.",
+        "capa": "https://m.media-amazon.com/images/M/MV5BMjA0MzQzNjM1Ml5BMl5BanBnXkFtZTgwNjM5MjU5NjM@._V1_.jpg",
+        "backdrop": "https://wallpapercave.com/wp/wp9404547.jpg",
+        "trailer": "https://www.youtube.com/embed/urRVZ4SW7WU"
+      },
+      {
+        "id": "tigerking",
+        "titulo": "Tiger King",
+        "ano": 2020,
+        "genero": "Documentário",
+        "rating": 3.9,
+        "descricao": "Uma história bizarra de crime, obsessão e loucura no submundo dos criadores de grandes felinos nos EUA.",
+        "capa": "https://m.media-amazon.com/images/M/MV5BYTY3N2NhOWItYjY5Yy00M2Y0LTg1MWUtN2NjNDA4MDE5MzQ2XkEyXkFqcGdeQXVyMTEyMjM2NDc2._V1_.jpg",
+        "backdrop": "https://wallpapercave.com/wp/wp9404551.jpg",
+        "trailer": "https://www.youtube.com/embed/T2Qpw8W9mY0"
+      },
+      {
+        "id": "blackfish",
+        "titulo": "Blackfish",
+        "ano": 2013,
+        "genero": "Documentário",
+        "rating": 4.5,
+        "descricao": "O documentário examina a vida das orcas em cativeiro e os perigos da interação humana com esses animais.",
+        "capa": "https://m.media-amazon.com/images/M/MV5BNTkyNTkwMzkxMl5BMl5BanBnXkFtZTcwMzQwODk3OQ@@._V1_.jpg",
+        "backdrop": "https://wallpapercave.com/wp/wp9404555.jpg",
+        "trailer": "https://www.youtube.com/embed/fLOeH-Oq_1Y"
+      },
+      {
+        "id": "cowspiracy",
+        "titulo": "Cowspiracy",
+        "ano": 2014,
+        "genero": "Documentário",
+        "rating": 4.1,
+        "descricao": "Um documentário que explora o impacto da pecuária no meio ambiente e investiga por que as principais organizações ambientais têm medo de falar sobre isso.",
+        "capa": "https://m.media-amazon.com/images/M/MV5BMjExNTU1OTkyNV5BMl5BanBnXkFtZTgwNjI4MDY5NjE@._V1_.jpg",
+        "backdrop": "https://wallpapercave.com/wp/wp9404559.jpg",
+        "trailer": "https://www.youtube.com/embed/nV04zyfLyN4"
+      },
+      {
+        "id": "13th",
+        "titulo": "13th",
+        "ano": 2016,
+        "genero": "Documentário",
+        "rating": 4.6,
+        "descricao": "Uma análise poderosa do sistema de justiça criminal dos EUA e da encarceração em massa de afro-americanos.",
+        "capa": "https://m.media-amazon.com/images/M/MV5BMjAwMjU5NjIxOV5BMl5BanBnXkFtZTgwMjQwODM1ODE@._V1_.jpg",
+        "backdrop": "https://wallpapercave.com/wp/wp9404563.jpg",
+        "trailer": "https://www.youtube.com/embed/V66F3WU2CKk"
+      },
+      {
+        "id": "myoctopusteacher",
+        "titulo": "Meu Professor Polvo",
+        "ano": 2020,
+        "genero": "Documentário",
+        "rating": 4.8,
+        "descricao": "Um cineasta desenvolve uma amizade improvável com um polvo enquanto mergulha na floresta de algas da África do Sul.",
+        "capa": "https://m.media-amazon.com/images/M/MV5BZjY5ZWE3MTYtYWE4ZC00ODk4LWEwNTctYTYwOTQ0ZDE0N2I2XkEyXkFqcGdeQXVyMTAyMjQ3NzQ1._V1_.jpg",
+        "backdrop": "https://wallpapercave.com/wp/wp9404567.jpg",
+        "trailer": "https://www.youtube.com/embed/3s0LTDhqe5A"
+      },
+      {
+        "id": "theactofkilling",
+        "titulo": "The Act of Killing",
+        "ano": 2012,
+        "genero": "Documentário",
+        "rating": 4.4,
+        "descricao": "Ex-carrascos recriam seus assassinatos em massa na Indonésia de 1965 em vários gêneros cinematográficos.",
+        "capa": "https://m.media-amazon.com/images/M/MV5BMTYzMjA2NjYwOV5BMl5BanBnXkFtZTcwNjU4NTQ4OQ@@._V1_.jpg",
+        "backdrop": "https://wallpapercave.com/wp/wp9404571.jpg",
+        "trailer": "https://www.youtube.com/embed/Q7XRNhk6QdQ"
+      },
+      {
+        "id": "wontyoubemyneighbor",
+        "titulo": "Won't You Be My Neighbor?",
+        "ano": 2018,
+        "genero": "Documentário",
+        "rating": 4.5,
+        "descricao": "Um olhar sobre a vida e o legado de Fred Rogers, o querido apresentador do programa infantil 'Vila Sésamo'.",
+        "capa": "https://m.media-amazon.com/images/M/MV5BZTVjOTY1NWUtNGE2Ny00YjA4LWI3ODItYjAzOGE1NjE4M2U0XkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg",
+        "backdrop": "https://wallpapercave.com/wp/wp9404575.jpg",
+        "trailer": "https://www.youtube.com/embed/FhwktRDG_aQ"
+      }
+    ],
+    "Animações para Todos": [
+      {
+        "id": "aviacodechihiro",
+        "titulo": "A Viagem de Chihiro",
+        "ano": 2001,
+        "genero": "Animação",
+        "rating": 4.8,
+        "descricao": "Chihiro e seus pais se deparam com um mundo mágico dominado por uma bruxa, onde humanos são transformados em animais.",
+        "capa": "https://m.media-amazon.com/images/M/MV5BMjlmZmI5MDctNDE2YS00YWE0LWE5ZWItZDBhYWQ0NTcxNWRhXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg",
+        "backdrop": "https://wallpapercave.com/wp/wp4056410.jpg",
+        "trailer": "https://www.youtube.com/embed/ByXuk9QqQkk"
+      },
+      {
+        "id": "toyStory",
+        "titulo": "Toy Story",
+        "ano": 1995,
+        "genero": "Animação",
+        "rating": 4.7,
+        "descricao": "Os brinquedos de Andy ganham vida quando os humanos não estão olhando, liderados pelo cowboy Woody e o astronauta Buzz Lightyear.",
+        "capa": "https://m.media-amazon.com/images/M/MV5BMDU2ZWJlMjktMTRhMy00ZTA5LWEzNDgtYmNmZTEwZTViZWJkXkEyXkFqcGdeQXVyNDQ2OTk4MzI@._V1_.jpg",
+        "backdrop": "https://wallpapercave.com/wp/wp4056414.jpg",
+        "trailer": "https://www.youtube.com/embed/v-PjgYDrg70"
+      },
+      {
+        "id": "spiderverse",
+        "titulo": "Homem-Aranha no Aranhaverso",
+        "ano": 2018,
+        "genero": "Animação",
+        "rating": 4.9,
+        "descricao": "Miles Morales se torna o Homem-Aranha de seu universo e deve unir forças com versões alternativas do herói para salvar a realidade.",
+        "capa": "https://m.media-amazon.com/images/M/MV5BMjMwNDkxMTgzOF5BMl5BanBnXkFtZTgwNTkwNTQ3NjM@._V1_.jpg",
+        "backdrop": "https://wallpapercave.com/wp/wp4056418.jpg",
+        "trailer": "https://www.youtube.com/embed/g4Hbz2jLxvQ"
+      },
+      {
+        "id": "frozen",
+        "titulo": "Frozen",
+        "ano": 2013,
+        "genero": "Animação",
+        "rating": 4.3,
+        "descricao": "A princesa Anna parte em uma jornada com o vendedor de gelo Kristoff para encontrar sua irmã Elsa, que congelou o reino acidentalmente.",
+        "capa": "https://m.media-amazon.com/images/M/MV5BMTQ1MjQwMTE5OF5BMl5BanBnXkFtZTgwNjk3MTcyMDE@._V1_.jpg",
+        "backdrop": "https://wallpapercave.com/wp/wp4056422.jpg",
+        "trailer": "https://www.youtube.com/embed/TbQm5doF_Uc"
+      },
+      {
+        "id": "soul",
+        "titulo": "Soul",
+        "ano": 2020,
+        "genero": "Animação",
+        "rating": 4.6,
+        "descricao": "Um professor de música que perdeu sua paixão pela vida é transportado para o mundo antes da existência e deve encontrar seu caminho de volta.",
+        "capa": "https://m.media-amazon.com/images/M/MV5BZGE1MDg5M2MtNTkyZS00MTY5LTg1YzUtZTlhZmM1Y2EwNmFmXkEyXkFqcGdeQXVyNjA3OTI0MDc@._V1_.jpg",
+        "backdrop": "https://wallpapercave.com/wp/wp4056426.jpg",
+        "trailer": "https://www.youtube.com/embed/xOsLIiBStEs"
+      },
+      {
+        "id": "shrek",
+        "titulo": "Shrek",
+        "ano": 2001,
+        "genero": "Animação",
+        "rating": 4.5,
+        "descricao": "Um ogro solitário embarca em uma missão para resgatar uma princesa para um Lorde malvado, mas acaba encontrando o amor.",
+        "capa": "https://m.media-amazon.com/images/M/MV5BOGZhM2FhNTItODAzNi00YjA0LWEyN2UtNjJlYWQzYzU1MDg5L2ltYWdlL2ltYWdlXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_.jpg",
+        "backdrop": "https://wallpapercave.com/wp/wp4056430.jpg",
+        "trailer": "https://www.youtube.com/embed/CwXOrWvPBPk"
+      },
+      {
+        "id": "zootopia",
+        "titulo": "Zootopia",
+        "ano": 2016,
+        "genero": "Animação",
+        "rating": 4.4,
+        "descricao": "Uma coelha policial e uma raposa vigarista trabalham juntos para desvendar uma conspiração na cidade dos animais.",
+        "capa": "https://m.media-amazon.com/images/M/MV5BOTMyMjEyNzIzMV5BMl5BanBnXkFtZTgwNzIyNjU0NzE@._V1_.jpg",
+        "backdrop": "https://wallpapercave.com/wp/wp4056434.jpg",
+        "trailer": "https://www.youtube.com/embed/jWM0ct-OLsM"
+      },
+      {
+        "id": "up",
+        "titulo": "Up - Altas Aventuras",
+        "ano": 2009,
+        "genero": "Animação",
+        "rating": 4.6,
+        "descricao": "Um idoso vendedor de balões viaja para a América do Sul amarrando balões em sua casa, acompanhado acidentalmente por um escoteiro.",
+        "capa": "https://m.media-amazon.com/images/M/MV5BMTk3NDE2NzI4NF5BMl5BanBnXkFtZTgwNzE1MzEyMTE@._V1_.jpg",
+        "backdrop": "https://wallpapercave.com/wp/wp4056438.jpg",
+        "trailer": "https://www.youtube.com/embed/qas5lWp7_R0"
+      },
+      {
+        "id": "wallE",
+        "titulo": "WALL·E",
+        "ano": 2008,
+        "genero": "Animação",
+        "rating": 4.7,
+        "descricao": "No futuro distante, um pequeno robô de limpeza encontra uma nova razão para viver quando conhece um robô de busca de alta tecnologia.",
+        "capa": "https://m.media-amazon.com/images/M/MV5BMjExMTg5OTU0NF5BMl5BanBnXkFtZTcwMjMxMzMzMw@@._V1_.jpg",
+        "backdrop": "https://wallpapercave.com/wp/wp4056442.jpg",
+        "trailer": "https://www.youtube.com/embed/CZ1CATNbXg0"
+      },
+      {
+        "id": "coraline",
+        "titulo": "Coraline",
+        "ano": 2009,
+        "genero": "Animação",
+        "rating": 4.5,
+        "descricao": "Coraline descobre uma porta secreta em sua nova casa que leva a uma versão alternativa de sua vida, mas logo percebe que há algo sinistro por trás disso.",
+        "capa": "https://m.media-amazon.com/images/M/MV5BMzQxNjM5NzkxNV5BMl5BanBnXkFtZTcwMzg5NDMwMg@@._V1_.jpg",
+        "backdrop": "https://wallpapercave.com/wp/wp4056446.jpg",
+        "trailer": "https://www.youtube.com/embed/m9bOpeuvNwY"
+      }
+    ]
+  }
+}

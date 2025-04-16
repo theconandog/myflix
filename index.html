@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MinhaFlix Premium</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --primary: #ff1a1a;
+      --primary-dark: #cc0000;
+      --primary-glow: rgba(255, 26, 26, 0.2);
+      --dark-1: #0a0a0a;
+      --dark-2: #121212;
+      --dark-3: #1a1a1a;
+      --light: #f5f5f5;
+      --light-gray: #e0e0e0;
+      --gray: #8c8c8c;
+      --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+      --shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+      --card-scale: 1.05;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes pulse {
+      0% { opacity: 0.6; }
+      50% { opacity: 1; }
+      100% { opacity: 0.6; }
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: radial-gradient(ellipse at center, var(--dark-1) 0%, var(--dark-2) 100%);
+      color: var(--light);
+      font-family: 'Netflix Sans', 'Helvetica Neue', Arial, sans-serif;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* Header Cinematográfico */
+    header {
+      background: linear-gradient(to bottom, 
+                rgba(0,0,0,0.8) 0%, 
+                rgba(0,0,0,0.4) 60%, 
+                rgba(0,0,0,0) 100%);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 5%;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      transition: var(--transition);
+      backdrop-filter: blur(10px);
+    }
+
+    header.scrolled {
+      background: var(--dark-2);
+      box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
+      padding: 15px 5%;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+      font-weight: 700;
+      background: linear-gradient(to right, var(--primary), #ff4d4d);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      letter-spacing: 1px;
+    }
+
+    .logo-icon {
+      color: var(--primary);
+      font-size: 2rem;
+      animation: pulse 2s infinite;
+    }
+
+    /* Barra de Pesquisa Avançada */
+    .search-container {
+      position: relative;
+      width: 300px;
+    }
+
+    .search-box {
+      background-color: rgba(30, 30, 30, 0.8);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 30px;
+      padding: 12px 20px;
+      width: 100%;
+      color: var(--light);
+      font-size: 1rem;
+      transition: var(--transition);
+      backdrop-filter: blur(5px);
+    }
+
+    .search-box:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 2px var(--primary-glow);
+      background-color: rgba(20, 20, 20, 0.9);
+    }
+
+    .search-icon {
+      position: absolute;
+      right: 15px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--gray);
+      transition: var(--transition);
+    }
+
+    .search-box:focus + .search-icon {
+      color: var(--primary);
+    }
+
+    /* Conteúdo Principal */
+    .content {
+      padding: 150px 5% 50px;
+      max-width: 100%;
+    }
+
+    /* Categorias */
+    .category-title {
+      font-size: 1.8rem;
+      margin: 40px 0 25px;
+      position: relative;
+      display: inline-block;
+      padding-left: 15px;
+    }
+
+    .category-title::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 5px;
+      height: 80%;
+      width: 5px;
+      background: linear-gradient(to bottom, var(--primary), #ff4d4d);
+      border-radius: 3px;
+    }
+
+    /* Carrossel Premium */
+    .carousel-container {
+      position: relative;
+      margin-bottom: 60px;
+      animation: fadeIn 0.8s forwards;
+    }
+
+    .video-list {
+      display: flex;
+      overflow-x: auto;
+      gap: 25px;
+      padding: 20px 5px;
+      scroll-behavior: smooth;
+      scrollbar-width: none;
+    }
+
+    .video-list::-webkit-scrollbar {
+      display: none;
+    }
+
+    /* Cards Cinematográficos */
+    .video-card {
+      position: relative;
+      background: var(--dark-3);
+      border-radius: 10px;
+      min-width: 220px;
+      flex-shrink: 0;
+      transition: var(--transition);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      cursor: pointer;
+      transform-origin: center bottom;
+      z-index: 1;
+    }
+
+    .video-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 50%);
+      z-index: 2;
+      opacity: 0;
+      transition: var(--transition);
+    }
+
+    .video-card:hover {
+      transform: scale(var(--card-scale)) translateY(-20px);
+      z-index: 10;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    }
+
+    .video-card:hover::before {
+      opacity: 1;
+    }
+
+    .video-card img {
+      width: 100%;
+      height: 330px;
+      object-fit: cover;
+      display: block;
+      transition: var(--transition);
+    }
+
+    .video-card:hover img {
+      transform: scale(1.05);
+    }
+
+    .video-info {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 20px;
+      z-index: 3;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: var(--transition);
+    }
+
+    .video-card:hover .video-info {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .video-title {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 5px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .video-meta {
+      display: flex;
+      gap: 15px;
+      font-size: 0.9rem;
+      color: var(--light-gray);
+      margin-bottom: 10px;
+    }
+
+    .video-rating {
+      color: #ffd700;
+    }
+
+    .play-button {
+      background-color: var(--primary);
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 10px;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .play-button:hover {
+      transform: scale(1.1);
+      background-color: var(--primary-dark);
+    }
+
+    /* Navegação do Carrossel */
+    .carousel-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(20, 20, 20, 0.9);
+      border: none;
+      color: white;
+      font-size: 1.8rem;
+      cursor: pointer;
+      padding: 15px 10px;
+      z-index: 20;
+      border-radius: 50%;
+      opacity: 0;
+      transition: var(--transition);
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      backdrop-filter: blur(5px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .carousel-container:hover .carousel-arrow {
+      opacity: 1;
+    }
+
+    .carousel-arrow:hover {
+      background-color: var(--primary);
+      transform: translateY(-50%) scale(1.1);
+    }
+
+    .carousel-arrow.left {
+      left: -25px;
+    }
+
+    .carousel-arrow.right {
+      right: -25px;
+    }
+
+    /* Rodapé Premium */
+    footer {
+      background: linear-gradient(to top, var(--dark-1), var(--dark-2));
+      padding: 60px 5% 40px;
+      text-align: center;
+      position: relative;
+    }
+
+    footer::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(to right, transparent, var(--primary), transparent);
+    }
+
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 30px;
+      text-align: left;
+    }
+
+    .footer-column h3 {
+      color: var(--light);
+      margin-bottom: 20px;
+      font-size: 1.2rem;
+      position: relative;
+      display: inline-block;
+    }
+
+    .footer-column h3::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 40px;
+      height: 2px;
+      background-color: var(--primary);
+    }
+
+    .footer-links {
+      list-style: none;
+    }
+
+    .footer-links li {
+      margin-bottom: 10px;
+    }
+
+    .footer-links a {
+      color: var(--gray);
+      text-decoration: none;
+      transition: var(--transition);
+      display: inline-block;
+    }
+
+    .footer-links a:hover {
+      color: var(--light);
+      transform: translateX(5px);
+    }
+
+    .social-links {
+      display: flex;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .social-links a {
+      color: var(--gray);
+      font-size: 1.5rem;
+      transition: var(--transition);
+    }
+
+    .social-links a:hover {
+      color: var(--primary);
+      transform: translateY(-3px);
+    }
+
+    .copyright {
+      margin-top: 50px;
+      color: var(--gray);
+      font-size: 0.9rem;
+      padding-top: 30px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    /* Efeito de Destaque no Card */
+    .video-card::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(to right, var(--primary), #ff4d4d);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: var(--transition);
+      z-index: 2;
+    }
+
+    .video-card:hover::after {
+      transform: scaleX(1);
+    }
+
+    /* Responsividade Premium */
+    @media (max-width: 1200px) {
+      .video-card {
+        min-width: 200px;
+      }
+      
+      .video-card img {
+        height: 300px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        gap: 20px;
+        padding: 15px;
+        position: relative;
+      }
+      
+      .search-container {
+        width: 100%;
+      }
+      
+      .content {
+        padding: 120px 15px 30px;
+      }
+      
+      .video-card {
+        min-width: 160px;
+      }
+      
+      .video-card img {
+        height: 240px;
+      }
+      
+      .carousel-arrow {
+        opacity: 1;
+        width: 40px;
+        height: 40px;
+        font-size: 1.5rem;
+      }
+      
+      .carousel-arrow.left {
+        left: -15px;
+      }
+      
+      .carousel-arrow.right {
+        right: -15px;
+      }
+      
+      .footer-content {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 480px) {
+      header h1 {
+        font-size: 2rem;
+      }
+      
+      .video-card {
+        min-width: 140px;
+      }
+      
+      .video-card img {
+        height: 210px;
+      }
+      
+      :root {
+        --card-scale: 1.03;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo">
+    <i class="fas fa-play-circle logo-icon"></i>
+    <h1>Bucetão123Filmes</h1>
+  </div>
+  <div class="search-container">
+    <input type="text" id="searchInput" class="search-box" placeholder="Pesquisar filmes, séries...">
+    <i class="fas fa-search search-icon"></i>
+  </div>
+</header>
+
+<div class="content" id="conteudo">
+  <!-- As categorias vão aqui -->
+</div>
+
+<footer>
+  <div class="footer-content">
+    <div class="footer-column">
+      <h3>Navegação</h3>
+      <ul class="footer-links">
+        <li><a href="#">Início</a></li>
+        <li><a href="#">Séries</a></li>
+        <li><a href="#">Filmes</a></li>
+        <li><a href="#">Novidades</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h3>Conta</h3>
+      <ul class="footer-links">
+        <li><a href="#">Minha Conta</a></li>
+        <li><a href="#">Assinatura</a></li>
+        <li><a href="#">Configurações</a></li>
+        <li><a href="#">Sair</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h3>Legal</h3>
+      <ul class="footer-links">
+        <li><a href="#">Termos de Uso</a></li>
+        <li><a href="#">Privacidade</a></li>
+        <li><a href="#">Cookies</a></li>
+        <li><a href="#">DMCA</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h3>Redes Sociais</h3>
+      <div class="social-links">
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+  </div>
+  <div class="copyright">
+    <p>© 2025 MinhaFlix Premium. Todos os direitos reservados.</p>
+  </div>
+</footer>
+
+<script>
+  // Busca os dados do JSON
+  fetch('filmes.json')
+    .then(response => response.json())
+    .then(data => {
+      const content = document.getElementById('conteudo');
+      
+      // Remove o "Catálogo Completo" se existir
+      const catalogoCompleto = document.querySelector('h2');
+      if (catalogoCompleto && catalogoCompleto.textContent === "Catálogo Completo") {
+        catalogoCompleto.parentElement.remove();
+      }
+
+      // Cria seções para cada categoria
+      for (const [categoria, filmes] of Object.entries(data.categorias)) {
+        const section = document.createElement('div');
+        section.className = 'carousel-container';
+        
+        const titulo = document.createElement('h2');
+        titulo.className = 'category-title';
+        titulo.textContent = categoria;
+        
+        const lista = document.createElement('div');
+        lista.className = 'video-list';
+        
+        // Popula os filmes
+        filmes.forEach(filme => {
+          const card = document.createElement('div');
+          card.className = 'video-card';
+          card.dataset.id = filme.id;
+          card.dataset.searchable = `${filme.titulo.toLowerCase()} ${filme.genero.toLowerCase()} ${filme.ano}`;
+          
+          card.innerHTML = `
+            <img src="${filme.capa}" alt="${filme.titulo}" loading="lazy">
+            <div class="video-info">
+              <div class="video-title">${filme.titulo}</div>
+              <div class="video-meta">
+                <span>${filme.ano}</span>
+                <span>${filme.genero}</span>
+              </div>
+              <button class="play-button"><i class="fas fa-play"></i></button>
+            </div>
+          `;
+          
+          lista.appendChild(card);
+        });
+
+        // Adiciona setas de navegação
+        const leftArrow = document.createElement('button');
+        leftArrow.className = 'carousel-arrow left';
+        leftArrow.innerHTML = '<i class="fas fa-chevron-left"></i>';
+        leftArrow.onclick = () => {
+          lista.scrollBy({ left: -300, behavior: 'smooth' });
+        };
+
+        const rightArrow = document.createElement('button');
+        rightArrow.className = 'carousel-arrow right';
+        rightArrow.innerHTML = '<i class="fas fa-chevron-right"></i>';
+        rightArrow.onclick = () => {
+          lista.scrollBy({ left: 300, behavior: 'smooth' });
+        };
+
+        section.appendChild(titulo);
+        section.appendChild(lista);
+        section.appendChild(leftArrow);
+        section.appendChild(rightArrow);
+        content.appendChild(section);
+      }
+
+      // Adiciona eventos de clique
+      document.querySelectorAll('.video-card').forEach(card => {
+        card.addEventListener('click', () => {
+          window.location.href = `filme.html?id=${card.dataset.id}`;
+        });
+      });
+    });
+
+  // Sistema de Busca (mantido igual ao anterior)
+  document.getElementById("searchInput").addEventListener("input", function(e) {
+    const termo = this.value.trim().toLowerCase();
+    const cards = document.querySelectorAll('.video-card');
+    const searchIcon = document.querySelector('.search-icon');
+
+    if (!termo) {
+      cards.forEach(card => card.style.display = "block");
+      searchIcon.className = "fas fa-search";
+      return;
+    }
+
+    cards.forEach(card => {
+      const searchText = card.dataset.searchable;
+      card.style.display = searchText.includes(termo) ? "block" : "none";
+    });
+  });
+
+  document.getElementById("searchInput").addEventListener("keydown", function(e) {
+    if (e.key === 'Escape' || (e.key === 'Enter' && !this.value.trim())) {
+      this.value = '';
+      const cards = document.querySelectorAll('.video-card');
+      cards.forEach(card => card.style.display = "block");
+      document.querySelector('.search-icon').className = "fas fa-search";
+    }
+  });
+</script>
+
+</body>
+</html>

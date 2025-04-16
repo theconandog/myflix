@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detalhes do Filme | MinhaFlix</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --primary: #ff1a1a;
+      --dark-1: #0a0a0a;
+      --dark-2: #121212;
+      --light: #f5f5f5;
+      --gray: #8c8c8c;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: var(--dark-1);
+      color: var(--light);
+      font-family: 'Poppins', sans-serif;
+      line-height: 1.6;
+    }
+
+    .movie-header {
+      height: 70vh;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .movie-backdrop {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.4;
+    }
+
+    .movie-content {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 5%;
+      background: linear-gradient(to top, var(--dark-1), transparent);
+    }
+
+    .movie-poster {
+      width: 250px;
+      border-radius: 10px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      margin-right: 30px;
+    }
+
+    .movie-title {
+      font-size: 3rem;
+      margin-bottom: 10px;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    .movie-meta {
+      color: var(--gray);
+      margin-bottom: 20px;
+      font-size: 1.1rem;
+    }
+
+    .movie-rating {
+      color: #ffd700;
+    }
+
+    .movie-description {
+      max-width: 800px;
+      margin-bottom: 30px;
+    }
+
+    .play-button {
+      background-color: var(--primary);
+      color: white;
+      border: none;
+      padding: 12px 30px;
+      border-radius: 30px;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: all 0.3s;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .play-button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px rgba(255, 26, 26, 0.5);
+    }
+
+    .back-button {
+      position: absolute;
+      top: 30px;
+      left: 30px;
+      color: var(--light);
+      font-size: 1.5rem;
+      cursor: pointer;
+      z-index: 10;
+    }
+
+    /* Estilo para o player de vídeo */
+    .video-player {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.9);
+      z-index: 1000;
+      display: none;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .close-player {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      color: white;
+      font-size: 2rem;
+      cursor: pointer;
+      z-index: 1001;
+    }
+
+    #localVideoPlayer {
+      width: 80%;
+      max-width: 1200px;
+      max-height: 80vh;
+    }
+
+    @media (max-width: 768px) {
+      .movie-poster {
+        width: 150px;
+        margin-bottom: 20px;
+      }
+      .movie-title {
+        font-size: 2rem;
+      }
+      #localVideoPlayer {
+        width: 95%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a href="index.html" class="back-button">
+    <i class="fas fa-arrow-left"></i>
+  </a>
+
+  <div class="movie-header">
+    <img id="backdrop" class="movie-backdrop" src="" alt="">
+    <div class="movie-content">
+      <div style="display: flex; align-items: flex-end; flex-wrap: wrap;">
+        <img id="poster" class="movie-poster" src="" alt="">
+        <div>
+          <h1 id="title" class="movie-title"></h1>
+          <div id="meta" class="movie-meta"></div>
+          <p id="description" class="movie-description"></p>
+          <button id="playButton" class="play-button">
+            <i class="fas fa-play"></i> Assistir
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Player de vídeo para trailers (hidden inicialmente) -->
+  <div id="videoPlayer" class="video-player">
+    <span class="close-player" onclick="fecharVideo()">&times;</span>
+    <iframe id="videoFrame" width="80%" height="80%" frameborder="0" allowfullscreen></iframe>
+  </div>
+
+  <!-- Player de vídeo local para filmes -->
+  <div id="localVideoPlayerContainer" class="video-player">
+    <span class="close-player" onclick="fecharVideo()">&times;</span>
+    <video id="localVideoPlayer" controls controlsList="nodownload">
+      Seu navegador não suporta o elemento de vídeo.
+    </video>
+  </div>
+
+  <script>
+    // Dados de fallback (caso o JSON não carregue)
+    const filmeFallback = {
+      "id": "duna2",
+      "titulo": "Duna: Parte Dois",
+      "ano": 2024,
+      "genero": "Ficção Científica",
+      "rating": 4.9,
+      "descricao": "Paul Atreides une-se a Chani e aos Fremen enquanto busca vingança contra os conspiradores que destruíram sua família.",
+      "capa": "https://m.media-amazon.com/images/M/MV5BMTg2MzY0ODItMzg1Mi00Y2IzLWE1MTctYWJhOGQ2YjM1ZjE0XkEyXkFqcGdeQXVyMDM2NDM2MQ@@._V1_.jpg",
+      "backdrop": "https://wallpapercave.com/wp/wp12810574.jpg",
+      "trailer": "https://www.youtube.com/embed/Way9Dexny3w",
+      "arquivoLocal": null
+    };
+
+    // Mapeamento de filmes locais
+    const filmesLocais = {
+      "oppenheimer": "oppenheimer.mp4",
+      // Adicione outros filmes locais aqui conforme necessário
+      // "id-do-filme": "nome-do-arquivo.mp4"
+    };
+
+    // Pega o ID da URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const idFilme = urlParams.get('id');
+
+    // Busca os dados do filme
+    fetch('filmes.json')
+      .then(response => response.json())
+      .then(data => {
+        // Procura o filme em todas as categorias
+        let filmeEncontrado = null;
+        for (const categoria of Object.values(data.categorias)) {
+          const encontrado = categoria.find(f => f.id === idFilme);
+          if (encontrado) {
+            filmeEncontrado = encontrado;
+            break;
+          }
+        }
+        
+        const filme = filmeEncontrado || filmeFallback;
+
+        // Verifica se tem versão local
+        filme.arquivoLocal = filmesLocais[idFilme] || null;
+
+        // Preenche os dados na página
+        document.title = `${filme.titulo} | MinhaFlix`;
+        document.getElementById('backdrop').src = filme.backdrop || filme.capa;
+        document.getElementById('poster').src = filme.capa;
+        document.getElementById('title').textContent = filme.titulo;
+        document.getElementById('meta').innerHTML = `
+          <span>${filme.ano} • ${filme.genero} • <span class="movie-rating">★ ${filme.rating || '4.5'}</span></span>
+        `;
+        document.getElementById('description').textContent = filme.descricao;
+
+        // Configura o botão de play
+        document.getElementById('playButton').onclick = () => {
+          if (filme.arquivoLocal) {
+            // Player local para filmes disponíveis
+            const videoPlayer = document.getElementById('localVideoPlayer');
+            videoPlayer.src = `/videos/${filme.arquivoLocal}`;
+            videoPlayer.load();
+            document.getElementById('localVideoPlayerContainer').style.display = "flex";
+          } else if (filme.trailer) {
+            // Player de trailer para outros filmes
+            document.getElementById('videoFrame').src = filme.trailer + "?autoplay=1";
+            document.getElementById('videoPlayer').style.display = "flex";
+          } else {
+            alert("Conteúdo não disponível no momento");
+          }
+        };
+      })
+      .catch(error => {
+        console.error("Erro ao carregar dados:", error);
+        // Usa os dados de fallback
+        const filme = filmeFallback;
+        document.getElementById('backdrop').src = filme.backdrop;
+        document.getElementById('poster').src = filme.capa;
+        document.getElementById('title').textContent = filme.titulo;
+        document.getElementById('description').textContent = filme.descricao;
+      });
+
+    // Função para fechar o player de vídeo
+    function fecharVideo() {
+      document.getElementById('videoPlayer').style.display = "none";
+      document.getElementById('localVideoPlayerContainer').style.display = "none";
+      document.getElementById('videoFrame').src = "";
+      const videoPlayer = document.getElementById('localVideoPlayer');
+      videoPlayer.pause();
+      videoPlayer.currentTime = 0;
+    }
+
+    // Fecha o player ao pressionar ESC
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        fecharVideo();
+      }
+    });
+  </script>
+</body>
+</html>
